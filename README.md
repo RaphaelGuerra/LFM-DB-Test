@@ -1,34 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# LFM DB Test
 
-## Getting Started
+A small Next.js 10 article-list demo by Raphael Guerra. The home page statically fetches six posts from [JSONPlaceholder](https://jsonplaceholder.typicode.com/) and renders their titles, while the About page provides a short project note.
 
-First, run the development server:
+This repository is a learning project for experimenting with Next.js pages, components, CSS modules, and static data fetching. It does not connect to a database despite the repository name.
+
+## Features
+
+- Static home page generated with \`getStaticProps\`
+- Six sample article titles loaded from JSONPlaceholder
+- Reusable \`ArticleList\`, \`Header\`, \`Nav\`, and \`Layout\` components
+- About page at \`/about\`
+- CSS Modules for component-scoped styles
+
+## Requirements
+
+- Node.js compatible with Next.js 10
+- npm or Yarn
+- Network access during the build, because \`pages/index.js\` fetches JSONPlaceholder data
+
+## Run locally
 
 ```bash
+git clone https://github.com/RaphaelGuerra/LFM-DB-Test.git
+cd LFM-DB-Test
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Available scripts
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- \`npm run dev\` — start the development server
+- \`npm run build\` — create a production build
+- \`npm run start\` — serve the production build
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Project structure
 
-## Learn More
+- \`pages/index.js\` — home page and static article fetch
+- \`pages/about.js\` — About page
+- \`pages/api/hello.js\` — example API route
+- \`components/\` — shared React components
+- \`styles/\` — global styles and CSS Modules
 
-To learn more about Next.js, take a look at the following resources:
+## Notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The article data is provided by JSONPlaceholder and is fetched at build time. If that service is unavailable, the home page build cannot retrieve the sample posts.
